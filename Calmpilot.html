@@ -33,7 +33,7 @@
     <script src="js/respond.min.js"></script>
   [endif]-->
 </head>
-<body data-spy="scroll" data-target=".navbar-default" data-offset="100">
+<html data-spy="scroll" data-target=".navbar-default" data-offset="100">
 <!--Preloader-->
 <div id="preloader">
   <div id="pre-status">
@@ -93,9 +93,356 @@
   </div>
   <!--/#home-carousel-->
 </section>
-<section>
-<img src="images/Aboutus/01.jpg" alt="샘플 이미지" width="1000" height="500">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio Project</title>
+  <!-- 모바일 대응을 위해 viewport 설정 (선택 사항) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* ---------- 기본 스타일 초기화 ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ---------- 컨테이너 스타일 ---------- */
+    .project-intro {
+      max-width: 1200px; /* 페이지 너비를 조절할 수 있음 */
+      margin: 2rem auto; /* 화면 가운데 정렬 */
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 8px; /* 카드 형태 연출 */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 그늘 효과 */
+    }
+
+    /* ---------- 헤더(프로젝트 제목, 슬로건) ---------- */
+    .project-intro header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .project-intro header h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-intro header p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* ---------- 각 섹션 타이틀 공통 스타일 ---------- */
+    .project-intro article h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    /* ---------- 콘텐츠 블록 공통 스타일 ---------- */
+    .project-intro article {
+      margin-bottom: 2rem;
+    }
+
+    /* ---------- 목록 스타일 ---------- */
+    .project-intro ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-intro li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 목록 앞에 작은 원 표기 (•) */
+    .project-intro li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #888;
+    }
+
+    /* ---------- 링크 스타일 ---------- */
+    a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+
+    /* ---------- 프로젝트 갤러리(이미지) ---------- */
+    .project-gallery {
+      display: flex;
+      flex-wrap: wrap; /* 화면이 좁아지면 자동 줄바꿈 */
+      gap: 1rem;
+    }
+
+    .project-gallery figure {
+      flex: 1 1 300px; /* 최소 너비 300px, 공간에 따라 자동 조정 */
+      margin: 0;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .project-gallery figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* ---------- 반응형 미디어 쿼리 (예시) ---------- */
+    @media (max-width: 768px) {
+      .project-intro {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      .project-intro header h2 {
+        font-size: 1.6rem;
+      }
+      .project-intro article h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio Project</title>
+  <!-- 모바일 대응을 위해 viewport 설정 (선택 사항) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* ---------- 기본 스타일 초기화 ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ---------- 컨테이너 스타일 ---------- */
+    .project-intro {
+      max-width: 1200px; /* 페이지 너비를 조절할 수 있음 */
+      margin: 2rem auto; /* 화면 가운데 정렬 */
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 8px; /* 카드 형태 연출 */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 그늘 효과 */
+    }
+
+    /* ---------- 헤더(프로젝트 제목, 슬로건) ---------- */
+    .project-intro header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .project-intro header h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-intro header p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* ---------- 각 섹션 타이틀 공통 스타일 ---------- */
+    .project-intro article h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    /* ---------- 콘텐츠 블록 공통 스타일 ---------- */
+    .project-intro article {
+      margin-bottom: 2rem;
+    }
+
+    /* ---------- 목록 스타일 ---------- */
+    .project-intro ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-intro li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 목록 앞에 작은 원 표기 (•) */
+    .project-intro li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #888;
+    }
+
+    /* ---------- 링크 스타일 ---------- */
+    a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+
+    /* ---------- 프로젝트 갤러리(이미지) ---------- */
+    .project-gallery {
+      display: flex;
+      flex-wrap: wrap; /* 화면이 좁아지면 자동 줄바꿈 */
+      gap: 1rem;
+    }
+
+    .project-gallery figure {
+      flex: 1 1 300px; /* 최소 너비 300px, 공간에 따라 자동 조정 */
+      margin: 0;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .project-gallery figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* ---------- 반응형 미디어 쿼리 (예시) ---------- */
+    @media (max-width: 768px) {
+      .project-intro {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      .project-intro header h2 {
+        font-size: 1.6rem;
+      }
+      .project-intro article h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="project-intro">
+  <!-- 프로젝트 제목과 한 줄 요약 -->
+  <header>
+    <h2>Calmpliot</h2>
+    <p>슬로건이나 핵심 키워드, 프로젝트 한 줄 요약 등</p>
+  </header>
+
+  <!-- 프로젝트 개요 -->
+  <article class="project-overview">
+    <h3>프로젝트 개요</h3>
+    <p>
+      프로젝트의 배경, 해결하고자 하는 문제, 주요 타겟 사용자 등 전체적인 개요를
+      소개합니다. 왜 이 프로젝트가 만들어졌는지, 어떤 가치를 제공하는지 간단히 정리해 보세요.
+    </p>
+  </article>
+
+  <!-- 프로젝트 상세 내용 -->
+  <article class="project-details">
+    <h3>프로젝트 상세</h3>
+    <p>
+      프로젝트 진행 과정, 팀 내 역할, 어려웠던 점과 해결 과정을 상세히 작성합니다.
+      핵심 기능들을 목록화해서 한눈에 보이도록 구성하는 것도 좋습니다.
+    </p>
+    <ul>
+      <li><strong>진행 기간</strong>: 202X.MM ~ 202X.MM</li>
+      <li><strong>역할</strong>: 프론트엔드 / 백엔드 / 디자인 / 기획 등</li>
+      <li><strong>주요 기능</strong>: 사용자 인증, 실시간 채팅, API 연동 등</li>
+      <li><strong>문제 해결 사례</strong>: 성능 이슈 해결, 특정 버그 수정 등</li>
+    </ul>
+  </article>
+
+  <!-- 사용 기술 스택 -->
+  <article class="technologies-used">
+    <h3>사용 기술 스택</h3>
+    <ul>
+      <li><strong>프론트엔드</strong>: HTML, CSS, JavaScript, React/Vue.js 등</li>
+      <li><strong>백엔드</strong>: Node.js, Python(Flask/Django), Java(Spring) 등</li>
+      <li><strong>데이터베이스</strong>: MySQL, MongoDB, PostgreSQL</li>
+      <li><strong>협업 툴</strong>: Git/GitHub, Jira, Slack 등</li>
+    </ul>
+  </article>
+
+  <!-- 프로젝트 성과 및 수상 실적 -->
+  <article class="achievements">
+    <h3>성과 및 수상 실적</h3>
+    <ul>
+      <li>○○ 공모전 대상 수상 (연도)</li>
+      <li>○○ 해커톤 우승 (연도)</li>
+      <li>○○ 기업 연계 프로젝트 우수상 (연도)</li>
+    </ul>
+    <p>
+      프로젝트를 통해 얻은 지표(사용자 수, 매출, 다운로드 수 등)가 있다면
+      구체적인 숫자로 작성하여 프로젝트 가치를 더 강조해 보세요.
+    </p>
+  </article>
+
+  <!-- 프로젝트 이미지나 시연 자료 -->
+  <article class="project-gallery">
+    <h3>프로젝트 이미지/시연 자료</h3>
+    <figure>
+      <img src="project-screenshot1.png" alt="프로젝트 화면 예시 1" />
+      <figcaption>주요 기능이 작동 중인 화면 예시</figcaption>
+    </figure>
+    <figure>
+      <img src="project-screenshot2.png" alt="프로젝트 화면 예시 2" />
+      <figcaption>다른 핵심 페이지 화면 예시</figcaption>
+    </figure>
+    <!-- 필요한 만큼 이미지를 추가할 수 있습니다 -->
+  </article>
+
+  <!-- 프로젝트 관련 링크 -->
+  <article class="references">
+    <h3>관련 링크</h3>
+    <ul>
+      <li><a href="https://github.com/username/project-repo" target="_blank">GitHub 저장소</a></li>
+      <li><a href="https://project-demo-link.com" target="_blank">라이브 데모</a></li>
+      <!-- 외부 기사나 블로그 포스팅, 발표 영상, 기타 자료 링크도 추가 가능 -->
+    </ul>
+  </article>
 </section>
+
+</body>
+</html>
+
+
 <footer id="footer-down">
   <p> &copy; Copyright 2016 Cosmix - Created By : <a href="http://templatestock.co" target="_blank">Template Stock</a> </p>
 </footer>
