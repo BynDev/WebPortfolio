@@ -168,7 +168,35 @@
         <p style="font-size: 20px">Engagement</p>
         <h3 style="font-size: 14px;">Samsung Dream Class</h3>
         <h5 style="font-size: 12px;">Educational Volunteer Program Organized by Samsung</h5>
-        <h3 style="font-size: 14px;">SW University Honorship</h3>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Toggle Photo</title>
+          <style>
+            #photo {
+              display: none; /* 처음에는 사진을 숨김 */
+              margin-top: 10px;
+            }
+          </style>
+        </head>
+        <body>
+        <h3 style="font-size: 14px; cursor: pointer;" onclick="togglePhoto()">SW University Honorship</h3>
+        <img id="photo" src="images/Aboutus/Honorship.jpg" alt="Honorship Photo" width="300">
+
+        <script>
+          function togglePhoto() {
+            const photo = document.getElementById('photo');
+            if (photo.style.display === 'none' || photo.style.display === '') {
+              photo.style.display = 'block'; // 사진 표시
+            } else {
+              photo.style.display = 'none'; // 사진 숨김
+            }
+          }
+        </script>
+        </body>
+        </html>
         <h5 style="font-size: 12px;">Mentorship Program as a Top-Performing Software Student</h5>
         <h3 style="font-size: 14px;">Kyunghee University Student Mentor</h3>
         <h5 style="font-size: 12px;">Delivered On-Campus Lectures for University Students</h5>
