@@ -123,20 +123,110 @@
         <h5 style="font-size: 14px;display: inline;">KCC, 2024</h5><h5 style="font-size: 10px; display: inline;">* Honrable Mentioned</h5>
 
         <p style="font-size: 20px">Awards & Scholarships</p>
-        <h3 style="font-size: 14px;display: inline;">National IT Industry Promotion Agency's President Award</h3> <h3 style="font-size: 10px; display: inline;">* Leader</h3>
-        <h5 style="font-size: 12px;">2024 XR Device Make A Thon Organized by Ministry of Science & ICT</h5>
 
-        <h3 style="font-size: 14px;">Korea National Tourism Organization's President Award</h3>
-        <h5 style="font-size: 12px;">2024 Immersive Tourism Competition Organized by KNTO</h5>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <title>Awards & Scholarships</title>
+          <style>
+            /* 사진은 처음에 숨긴 상태 */
+            .award-photo {
+              display: none;
+              margin-top: 5px;
+            }
+          </style>
+        </head>
+        <body>
+        <p style="font-size: 20px;">Awards & Scholarships</p>
 
-        <h3 style="font-size: 14px;display: inline;"> 3rd Place at Hanoi PTIT Joint Hackathon</h3><h3 style="font-size: 10px; display: inline;">* Leader</h3>
-        <h5 style="font-size: 12px;">2024 Hanoi PTIT Joint Hackthon organized by PTIT & CAU</h5>
+        <!-- 1) National IT Industry Promotion Agency's President Award -->
+        <h3 style="font-size: 14px; display: inline; cursor: pointer;  text-decoration: underline;"
+            onclick="toggleAward('nipaPhoto')">
+          National IT Industry Promotion Agency's President Award
+        </h3>
+        <h3 style="font-size: 10px; display: inline;">* Leader</h3>
+        <img
+                id="nipaPhoto"
+                class="award-photo"
+                src="images/Nipa.jpg"
+                alt="NIPA Award Photo"
+                width="200"
+        >
+        <h5 style="font-size: 12px;">
+          2024 XR Device Make A Thon Organized by Ministry of Science & ICT
+        </h5>
         
-        <h3 style="font-size: 14px;display: inline;">Encouragement Award at KCC 2024</h3><h3 style="font-size: 10px; display: inline;">* First Author</h3>
-        <h5 style="font-size: 12px;">Organized by Korea Institute of Information Scientists</h5>
+        <!-- 2) Korea National Tourism Organization's President Award -->
+        <h3 style="font-size: 14px; cursor: pointer; text-decoration: underline;" 
+            onclick="toggleAward('kntoPhoto')">
+          Korea National Tourism Organization's President Award
+        </h3>
+        <img
+                id="kntoPhoto"
+                class="award-photo"
+                src="images/Awards/knto.jpg"
+                alt="KNTO Award Photo"
+                width="300"
+        >
+        <h5 style="font-size: 12px;">
+          2024 Immersive Tourism Competition Organized by KNTO
+        </h5>
+        
+        <!-- 3) 3rd Place at Hanoi PTIT Joint Hackathon -->
+        <h3 style="font-size: 14px; display: inline; cursor: pointer;  text-decoration: underline;"
+            onclick="toggleAward('ptitPhoto')">
+          3rd Place at Hanoi PTIT Joint Hackathon
+        </h3>
+        <h3 style="font-size: 10px; display: inline;">* Leader</h3>
+        <img
+                id="ptitPhoto"
+                class="award-photo"
+                src="images/Calmpilot/Expo.jpg"
+                alt="PTIT Hackathon Photo"
+                width="200"
+        >
+        <h5 style="font-size: 12px;">
+          2024 Hanoi PTIT Joint Hackthon Organized by PTIT & CAU
+        </h5>
 
-        <h3 style="font-size: 14px;">1.5 Candidates Korean Presidential Science Scholar</h3>
+        <!-- 4) Encouragement Award at KCC 2024 -->
+        <h3 style="font-size: 14px; display: inline; cursor: pointer;  text-decoration: underline;"
+            onclick="toggleAward('kccPhoto')">
+          Encouragement Award at KCC 2024
+        </h3>
+        <h3 style="font-size: 10px; display: inline;">* First Author</h3>
+        <img
+                id="kccPhoto"
+                class="award-photo"
+                src="images/Calmpilot/KCC.jpg"
+                alt="KCC Award Photo"
+                width="200"
+        >
+        <h5 style="font-size: 12px;">
+          Organized by Korea Institute of Information Scientists
+        </h5>
+        
+        <!-- 5) 1.5 Candidates Korean Presidential Science Scholar -->
+        <h3 style="font-size: 14px; cursor: pointer;"
+            onclick="toggleAward('presidentialScholarPhoto')">
+          1.5 Candidates Korean Presidential Science Scholar
+        </h3>
 
+        <script>
+          // 공통 토글 함수
+          function toggleAward(photoID) {
+            const photo = document.getElementById(photoID);
+            if (photo.style.display === 'none' || photo.style.display === '') {
+              photo.style.display = 'block';
+            } else {
+              photo.style.display = 'none';
+            }
+          }
+        </script>
+        </body>
+        </html>
+        
         <p style="font-size: 20px">Careers</p>
         <h3 style="font-size: 14px;">Kyunghee University Human & Interactive Technology Lab</h3>
         <h5 style="font-size: 12px;">Undergraduate Research Internship (2024.12 ~ )</h5>
@@ -162,31 +252,58 @@
         <h5 style="font-size: 12px;"> Hanoi, Vietnam (2024.5.15 ~ 2024.5.17) <img src="https://flagpedia.net/data/flags/w580/vn.png" alt="Vietnam Flag" style="width:20px; vertical-align:middle;"></h5>
         
         <p style="font-size: 20px">Engagement</p>
-        <h3 style="font-size: 14px;">Samsung Dream Class</h3>
-        <h5 style="font-size: 12px;">Educational Volunteer Program Organized by Samsung</h5>
+
         <!DOCTYPE html>
         <html lang="en">
         <head>
           <meta charset="UTF-8">
           <title>Toggle Photo</title>
           <style>
-            #photo {
-              display: none; /* 처음에는 사진을 숨김 */
+            #photoHonorship,
+            #photoSamsung {
+              display: none;
               margin-top: 10px;
             }
           </style>
         </head>
         <body>
-        <h3 style="font-size: 14px; cursor: pointer;" onclick="togglePhoto()">SW University Honorship</h3>
-        <img id="photo" src="images/Aboutus/Honorship.jpg" alt="Honorship Photo" width="300">
+
+        
+        <!-- 1) Samsung Dream Class -->
+        <h3 style="font-size: 14px; cursor: pointer;" onclick="togglePhotoSamsung()">
+          Samsung Dream Class
+        </h3>
+        <h5 style="font-size: 12px;">
+          Educational Volunteer Program Organized by Samsung
+        </h5>
+
+        <!-- 2) SW University Honorship -->
+        <h3 style="font-size: 14px; cursor: pointer;  text-decoration: underline;" onclick="togglePhotoHonorship()" >
+          SW University Honorship
+        </h3>
+        <img
+                id="photoHonorship"
+                src="images/Aboutus/Honorship.jpg"
+                alt="Honorship Photo"
+                width="200"
+        >
 
         <script>
-          function togglePhoto() {
-            const photo = document.getElementById('photo');
+          function togglePhotoSamsung() {
+            const photo = document.getElementById('photoSamsung');
             if (photo.style.display === 'none' || photo.style.display === '') {
-              photo.style.display = 'block'; // 사진 표시
+              photo.style.display = 'block';
             } else {
-              photo.style.display = 'none'; // 사진 숨김
+              photo.style.display = 'none';
+            }
+          }
+          
+          function togglePhotoHonorship() {
+            const photo = document.getElementById('photoHonorship');
+            if (photo.style.display === 'none' || photo.style.display === '') {
+              photo.style.display = 'block';
+            } else {
+              photo.style.display = 'none';
             }
           }
         </script>
