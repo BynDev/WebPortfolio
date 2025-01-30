@@ -613,6 +613,14 @@ ul.nav li.active a:before {
 	color:#fff;
 	font-weight:normal;
 }
+
+.portfolio-item-inner img {
+	width: 100%; /* 컨테이너 크기에 맞게 조정 */
+	height: 200px; /* 원하는 고정 높이 */
+	object-fit: cover; /* 이미지 비율을 유지하면서 크기 조정 */
+	display: block;
+}
+
 #portfolio .portfolio-filter > li a.active:after {
 	content: " ";
 	position: absolute;
