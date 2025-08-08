@@ -1,70 +1,72 @@
 <!DOCTYPE html>
-<!--
-	Cosmix by TEMPLATE STOCK
-	templatestock.co @templatestock
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.75">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Jaehyun Byun</title>
-<!--Bootstrap-->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<!--Stylesheets-->
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<!--Responsive-->
-<link rel="stylesheet" type="text/css" href="css/responsive.css">
-<!--Animation-->
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<!--Prettyphoto-->
-<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
-<!--Font-Awesome-->
-<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-<!--Owl-Slider-->
-<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="css/owl.theme.css">
-<link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
-<!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-  [endif]-->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Jaehyun Byun</title>
+
+  <!-- Bootstrap & Styles -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/prettyPhoto.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+  <link rel="stylesheet" href="css/owl.theme.css">
+  <link rel="stylesheet" href="css/owl.transitions.css">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <style>
+    .navbar-brand h3 { color: white; }
+    /* 링크 hover 개선 */
+    #about a { text-decoration: none; color: inherit; }
+    #about a:hover { text-decoration: underline; color: blue; transition: color .3s ease; }
+    /* Awards */
+    .awards-container { max-width: 600px; margin: 0 auto; }
+    .awards-container .title { font-size: 20px; margin-bottom: 15px; font-weight: bold; }
+    .award-item { margin-bottom: 20px; }
+    .award-title { font-size: 13px; cursor: pointer; color: #333; display: inline-block; vertical-align: middle; }
+    .award-role { font-size: 10px; color: #666; margin-left: 8px; vertical-align: middle; }
+    .award-photo { display: block; margin-top: 8px; width: 200px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+    .award-desc { font-size: 12px; color: #555; margin-top: 4px; }
+  </style>
 </head>
+
 <body data-spy="scroll" data-target=".navbar-default" data-offset="100">
-<!--Preloader-->
-<div id="preloader">
-  <div id="pre-status">
-    <div class="preload-placeholder"></div>
-  </div>
-</div>
-<!--Navigation-->
+
+<!-- Preloader -->
+<div id="preloader"><div id="pre-status"><div class="preload-placeholder"></div></div></div>
+
+<!-- Navigation -->
 <header id="menu">
   <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand" href="#menu"><h3></h3></a></div><style>.navbar-brand h3 {color: white;}</style>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#menu"><h3></h3></a>
+        </div>
+        <div class="collapse navbar-collapse" id="nav">
           <ul class="nav navbar-nav">
             <li class="active"><a class="scroll" href="#menu">Home</a></li>
             <li><a class="scroll" href="#about">About</a></li>
             <li><a class="scroll" href="#portfolio">Portfolio</a></li>
-            <li><a class="scroll" href="#Skills">Skills</a></li>
             <li><a class="scroll" href="#contact">Contact</a></li>
           </ul>
         </div>
-        <!-- /.navbar-collapse -->
       </div>
-      <!-- /.container-fluid -->
     </div>
   </div>
 </header>
-<!--Slider-Start-->
+
+<!-- Slider -->
 <section id="slider">
   <div id="home-carousel" class="carousel slide" data-ride="carousel" data-interval="10000">
     <div class="carousel-inner">
@@ -83,377 +85,209 @@
           <div class="row">
             <div class="col-md-7 col-sm-12 col-xs-12">
               <h2>AI-Driven Mixed Reality</h2>
-              <p>I explore how the fusion of Artificial Intelligence and Mixed Reality can unlock new forms of interaction previously thought impossible. By combining AI’s adaptive intelligence with the immersive power of MR, I design human-centered systems that go beyond conventional boundaries—enabling intuitive, responsive, and meaningful experiences in both physical and digital spaces. Guided by a "Responsible Human-Aware" philosophy, my work aims to transform what technology can do for people..</p>
+              <p>I explore how the fusion of Artificial Intelligence and Mixed Reality can unlock new forms of interaction previously thought impossible. By combining AI’s adaptive intelligence with the immersive power of MR, I design human-centered systems that go beyond conventional boundaries—enabling intuitive, responsive, and meaningful experiences in both physical and digital spaces. Guided by a "Responsible Human-Aware" philosophy, my work aims to transform what technology can do for people.</p>
             </div>
           </div>
         </div>
       </div>
-      <a class="home-carousel-left" href="#home-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a> <a class="home-carousel-right" href="#home-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a> </div>
+      <a class="home-carousel-left" href="#home-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="home-carousel-right" href="#home-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+    </div>
   </div>
-  <!--/#home-carousel-->
 </section>
 
-<!--About-Section-Start-->
+<!-- Social (kept in its own simple section) -->
 <section id="service">
   <footer id="footer-down">
     <ul class="social-icon">
-      <li class="twitter hvr-pulse">
-        <a href="https://velog.io/@bjh17501/posts" target="_blank">
-          <i class="fa fa-pencil-square"></i>
-        </a>
-      </li>
-      <li class="facebook hvr-pulse">
-        <a href="https://github.com/BynDev" target="_blank">
-          <i class="fa fa-github"></i>
-        </a>
-      </li>
-      <li class="twitter hvr-pulse">
-        <a href="https://www.linkedin.com/in/jaehyun-byun-322bb92aa/" target="_blank">
-          <i class="fa fa-linkedin"></i>
-        </a>
-      </li>
+      <li class="twitter hvr-pulse"><a href="https://velog.io/@bjh17501/posts" target="_blank"><i class="fa fa-pencil-square"></i></a></li>
+      <li class="facebook hvr-pulse"><a href="https://github.com/BynDev" target="_blank"><i class="fa fa-github"></i></a></li>
+      <li class="twitter hvr-pulse"><a href="https://www.linkedin.com/in/jaehyun-byun-322bb92aa/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
     </ul>
   </footer>
   <br>
 </section>
+
+<!-- About -->
 <section id="about">
   <div class="container">
     <div class="col-md-8 col-md-offset-2">
       <div class="heading">
         <h2><span>I'm</span> Jaehyun Byun (Byn)</h2>
         <div class="line"></div>
-        <!DOCTYPE html>
-        <html lang="ko">
-        <head>
-          <meta charset="UTF-8">
-          <title>Publication</title>
-          <style>
-            /* 기본 링크 스타일 설정 */
-            a {
-              text-decoration: none;
-              color: inherit;
-            }
-            a:hover {
-              text-decoration: underline;
-              color: blue;
-              cursor: pointer;
-              transition: color 0.3s ease;
-            }
-          </style>
-        </head>
-        <body>
-        <!-- 메인 제목 -->
-        <p style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">
-          Publication
-        </p>
-        
-        <!-- International 섹션 -->
-        <p style="font-size: 16px; font-weight: bold; margin-top: 5px; margin-bottom: 1px;">
-          International Conference
-        </p>
 
-        <h3 style="font-size: 12px; margin-bottom: 2px;">
-          <a href="https://dl.acm.org/doi/10.1145/3706599.3720300">
-            CrossGaussian: Enhancing Remote Collaboration through 3D Gaussian Splatting and Real-time 360° Streaming
-          </a>
+        <!-- Publication -->
+        <p style="font-size:20px; font-weight:bold; margin-bottom:10px;">Publication</p>
+
+        <p style="font-size:16px; font-weight:bold; margin-top:5px; margin-bottom:1px;">International Conference</p>
+
+        <h3 style="font-size:12px; margin-bottom:2px;">
+          <a href="https://dl.acm.org/doi/10.1145/3706599.3720300">CrossGaussian: Enhancing Remote Collaboration through 3D Gaussian Splatting and Real-time 360° Streaming</a>
         </h3>
-        <!-- 학회명 -->
-        <h5 style="font-size: 10px; margin: 5px 0; font-style: italic;">
+        <h5 style="font-size:10px; margin:5px 0; font-style:italic;">
           In Adjunct Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology
         </h5>
-        <!-- 저자 -->
-        <h5 style="font-size: 10px; margin: 0 0 4px 0;">
+        <h5 style="font-size:10px; margin:0 0 4px 0;">
           <b>Jaehyun Byun</b>, Byunghoon Kang, Yonghyun Kwon, Hongsong Choi, Yunseo Do, Eunho Kim, Sankeun Park, Seungjae Oh
         </h5>
 
-
-        <h3 style="font-size: 12px; margin-bottom: 2px;">
-          <a href="https://dl.acm.org/doi/10.1145/3706599.3720300">
-            Le Petit Care: A Child-Attuned Design for Personalized ADHD Symptom Management Through AI-powered Extended Reality
-          </a>
+        <h3 style="font-size:12px; margin-bottom:2px;">
+          <a href="#">Le Petit Care: A Child-Attuned Design for Personalized ADHD Symptom Management Through AI-powered Extended Reality</a>
         </h3>
-        <!-- 학회명 -->
-        <h5 style="font-size: 10px; margin: 5px 0; font-style: italic;">
+        <h5 style="font-size:10px; margin:5px 0; font-style:italic;">
           In Extended Abstracts of the 2025 CHI Conference on Human Factors in Computing Systems
         </h5>
-        <!-- 저자 -->
-        <h5 style="font-size: 10px; margin: 0 0 4px 0;">
+        <h5 style="font-size:10px; margin:0 0 4px 0;">
           <b>Jaehyun Byun</b>, Chowon Joung, Yerim Lee, Suyun Lee, Wooky Won
         </h5>
 
+        <p style="font-size:16px; font-weight:bold; margin-top:15px; margin-bottom:1px;">Journals</p>
 
-
-        <!-- Domestic 섹션 -->
-        <p style="font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 1px;">
-          Journals
-        </p>
-        
-        
-        <!-- 첫 번째 국내 논문 -->
-        <h3 style="font-size: 12px; margin-bottom: 2px;">
-          <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11821441">
-            Metaverse Platform Specialized in Discussion and Debate Functions in Online Communication Systems
-          </a>
+        <h3 style="font-size:12px; margin-bottom:2px;">
+          <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11821441">Metaverse Platform Specialized in Discussion and Debate Functions in Online Communication Systems</a>
         </h3>
-        <!-- 저자 -->
-        <h5 style="font-size: 12px; margin: 0;">
-          Minsu Kim, <b>Jaehyun Byun</b>, Tak Woo
-        </h5>
-        <!-- 학회명 -->
-        <h5 style="font-size: 12px; margin: 2px 0; font-style: italic;">
-          2024 Journal of Digital Contests Society
-        </h5>
+        <h5 style="font-size:12px; margin:0;">Minsu Kim, <b>Jaehyun Byun</b>, Tak Woo</h5>
+        <h5 style="font-size:12px; margin:2px 0; font-style:italic;">2024 Journal of Digital Contests Society</h5>
 
-        </body>
-        </html>
-
-
-
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <title>Awards</title>
-          <style>
-            .awards-container {
-              font-family: Arial, sans-serif;
-              max-width: 600px;
-              margin: 0 auto;
-            }
-            .awards-container .title {
-              font-size: 20px;
-              margin-bottom: 15px;
-              font-weight: bold;
-            }
-            .award-item {
-              margin-bottom: 20px;
-            }
-            .award-title {
-              font-size: 13px;
-              cursor: pointer;
-              color: #333;
-              display: inline-block;
-              vertical-align: middle;
-            }
-            .award-role {
-              font-size: 10px;
-              color: #666;
-              margin-left: 8px;
-              vertical-align: middle;
-            }
-            .award-photo {
-              display: block;         /* 모두 열려 있는 상태 */
-              margin-top: 8px;
-              width: 200px;
-              border-radius: 4px;
-              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .award-desc {
-              font-size: 12px;
-              color: #555;
-              margin-top: 4px;
-            }
-            .note {
-              font-size: 12px;
-              color: #888;
-              text-align: right;
-              margin-top: 10px;
-            }
-          </style>
-        </head>
-        <body>
-        <div class="awards-container">
+        <!-- Awards -->
+        <div class="awards-container" style="margin-top:20px;">
           <p class="title">Awards</p>
 
           <div class="award-item">
-      <span class="award-title" onclick="toggleAward('sdcPhoto')">
-        Finalist (Top 4), <b>ACM CHI 2025</b> Student Design Competition Track
-      </span>
+            <span class="award-title" onclick="toggleAward('sdcPhoto')">Finalist (Top 4), <b>ACM CHI 2025</b> Student Design Competition Track</span>
             <span class="award-role">* Leader</span>
             <img id="sdcPhoto" class="award-photo" src="images/SDC.jpg" alt="SDC Award Photo">
-            <div class="award-desc">
-              Association for Computing Machinery & SIGCHI
-            </div>
+            <div class="award-desc">Association for Computing Machinery & SIGCHI</div>
           </div>
 
           <div class="award-item">
-      <span class="award-title" onclick="toggleAward('nipaPhoto')">
-        2nd Place, XR Device Makerthon 2024 by <b>Ministry of Science and ICT</b>
-      </span>
+            <span class="award-title" onclick="toggleAward('nipaPhoto')">2nd Place, XR Device Makerthon 2024 by <b>Ministry of Science and ICT</b></span>
             <span class="award-role">* Leader</span>
             <img id="nipaPhoto" class="award-photo" src="images/Nipa.jpg" alt="NIPA Award Photo">
-            <div class="award-desc">
-              National IT Industry Promotion Agency's President Award
-            </div>
+            <div class="award-desc">National IT Industry Promotion Agency's President Award</div>
           </div>
 
           <div class="award-item">
-      <span class="award-title" onclick="toggleAward('kccPhoto')">
-        Encouragement Award, <b>Korean Computer Congress 2024 & 2025</b>
-      </span>
+            <span class="award-title" onclick="toggleAward('kccPhoto')">Encouragement Award, <b>Korean Computer Congress 2024 & 2025</b></span>
             <span class="award-role">* First Author</span>
             <img id="kccPhoto" class="award-photo" src="images/Calmpilot/KCC.jpg" alt="KCC Award Photo">
-            <div class="award-desc">
-              Korea Institute of Information Scientists and Engineers
-            </div>
+            <div class="award-desc">Korea Institute of Information Scientists and Engineers</div>
           </div>
 
           <div class="award-item">
-      <span class="award-title" onclick="toggleAward('kntoPhoto')">
-        SW University Honorship
-      </span>
-            <!-- role이 따로 없을 때는 생략 -->
-            <img id="Honorship" class="award-photo" src="images/Aboutus/Honorship.jpg" alt="KNTO Award Photo">
-            <div class="award-desc">
-            </div>
+            <span class="award-title" onclick="toggleAward('Honorship')">SW University Honorship</span>
+            <img id="Honorship" class="award-photo" src="images/Aboutus/Honorship.jpg" alt="Honorship Photo">
+            <div class="award-desc"></div>
           </div>
-          
         </div>
 
-        <script>
-          function toggleAward(photoID) {
-            const photo = document.getElementById(photoID);
-            photo.style.display = (photo.style.display === 'none' || photo.style.display === '')
-                    ? 'block' : 'none';
-          }
-        </script>
-        </body>
-        </html>
-        
-        <p style="font-size: 20px">Careers</p>
-        <h3 style="font-size: 13px;">Seoul Nation University Hospital Medical Spatial Computing Lab</h3>
-        <h5 style="font-size: 12px;">Software Development Intern (2024.09 ~ 2024.12)</h5>
-        
-        <p style="font-size: 20px">Activity</p>
-        <h3 style="font-size: 14px;">
-          Global Interdisciplinary Project in Digipen
-        </h3>
-        <h5 style="font-size: 12px;">Seattle, USA (2024.7.4 ~ 2024.7.24) <img src="https://flagpedia.net/data/flags/w580/us.png" alt="USA Flag" style="width:20px; vertical-align:middle;"></h5>
+        <p style="font-size:20px; margin-top:20px;">Careers</p>
+        <h3 style="font-size:13px;">Seoul National University Hospital Medical Spatial Computing Lab</h3>
+        <h5 style="font-size:12px;">Software Development Intern (2024.09 ~ 2024.12)</h5>
 
-        <!-- 이벤트 제목 -->
-        <h3 style="font-size: 14px; text-align: center; margin-bottom: 10px;">
-          Honored Partner at Vietnam Mobile Summit 2024, Hosted by TopDev
-        </h3>
+        <p style="font-size:20px; margin-top:20px;">Activity</p>
+        <h3 style="font-size:14px;">Global Interdisciplinary Project in Digipen</h3>
+        <h5 style="font-size:12px;">Seattle, USA (2024.7.4 ~ 2024.7.24) <img src="https://flagpedia.net/data/flags/w580/us.png" alt="USA Flag" style="width:20px; vertical-align:middle;"></h5>
 
-        <!-- 제목과 날짜 설명 사이에 200px 너비 이미지 삽입 -->
-        <img
-                src="images/Calmpilot/Expo.jpg"
-        alt="Vietnam Mobile Summit 2024"
-        width="200"
-        style="display: block; margin: 0 auto 10px auto;"
-        >
-
-        <!-- 날짜 및 위치 설명 -->
-        <h5 style="font-size: 12px; text-align: center; margin-top: 0;">
+        <h3 style="font-size:14px; text-align:center; margin-bottom:10px;">Honored Partner at Vietnam Mobile Summit 2024, Hosted by TopDev</h3>
+        <img src="images/Calmpilot/Expo.jpg" alt="Vietnam Mobile Summit 2024" width="200" style="display:block; margin:0 auto 10px auto;">
+        <h5 style="font-size:12px; text-align:center; margin-top:0;">
           Hochimin, Vietnam (2024.5.30 ~ 2024.5.31)
-          <img
-                  src="https://flagpedia.net/data/flags/w580/vn.png"
-                  alt="Vietnam Flag"
-                  style="width:20px; vertical-align:middle; margin-left:4px;"
-          >
+          <img src="https://flagpedia.net/data/flags/w580/vn.png" alt="Vietnam Flag" style="width:20px; vertical-align:middle; margin-left:4px;">
         </h5>
-        
-        <h3 style="font-size: 14px;">
-          PTIT Hackathon
-        </h3>
-        <h5 style="font-size: 12px;"> Hanoi, Vietnam (2024.5.15 ~ 2024.5.17) <img src="https://flagpedia.net/data/flags/w580/vn.png" alt="Vietnam Flag" style="width:20px; vertical-align:middle;"></h5>
+
+        <h3 style="font-size:14px;">PTIT Hackathon</h3>
+        <h5 style="font-size:12px;">Hanoi, Vietnam (2024.5.15 ~ 2024.5.17) <img src="https://flagpedia.net/data/flags/w580/vn.png" alt="Vietnam Flag" style="width:20px; vertical-align:middle;"></h5>
         <br>
-        </div>
       </div>
     </div>
   </div>
-  <!--Portfolio-Section-Start-->
-  <section id="portfolio">
-    <div class="container">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="heading">
-          <h2>Representative Projec<span>ts</span></h2>
-          <div class="line"></div>
-        </div>
-      </div>
-      <div class="text-center">
-        <ul class="portfolio-filter">
-          <li><a href="#" data-filter=".2025">2025</a></li>
-          <li><a href="#" data-filter=".2024">2024</a></li>
-          <li><a href="#" data-filter=".2023">2023</a></li>
-          <li><a href="#" data-filter=".2022">~2022</a></li>
-        </ul>
-        <!--/#portfolio-filter-->
-      </div>
-      <div class="portfolio-items">
-        <!--/.portfolio-item-->
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2025">
-          <div class="portfolio-item-inner">
-            <img class="img-responsive" src="images/CrossGaussian.jpg" alt="">
-            <div class="portfolio-info">
-              <!-- 기존의 'a' 태그를 제거하고, 버튼 태그를 추가 -->
-              <button onclick="window.location.href='calmpilo.html';" class="preview">
-                <i class="fa fa-plus-circle"></i>
-              </button>
-              <h6>CrossGaussian</h6>
-            </div>
-          </div>
-        </div>
-        <!--/.portfolio-item-->
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2025">
-          <div class="portfolio-item-inner">
-            <img class="img-responsive" src="images/LePetitCare.jpg" alt="">
-            <div class="portfolio-info">
-              <!-- 기존의 'a' 태그를 제거하고, 버튼 태그를 추가 -->
-              <button onclick="window.location.href='calmpilo.html';" class="preview">
-                <i class="fa fa-plus-circle"></i>
-              </button>
-              <h6>LePetitCare</h6>
-            </div>
-          </div>
-        </div>
-        <!--/.portfolio-item-->
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2024">
-          <div class="portfolio-item-inner">
-            <img class="img-responsive" src="images/Aboutus/I-there.jpg" alt="" loading="lazy" >
-            <div class="portfolio-info">
-              <!-- 설명 페이지로 이동하도록 링크 수정 -->
-              <button onclick="window.location.href='I-There.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
-              <h6>i-There</h6>
-            </div>
-          </div>
-        </div>
-        <!--/.portfolio-item-->
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2023">
-          <div class="portfolio-item-inner"> <img class="img-responsive" src="images/Aboutus/Debate.gif" alt="" loading="lazy">
-            <div class="portfolio-info"><button onclick="window.location.href='Viven.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
-              <h6>Metaverse for Debate</h6>
-            </div>
-          </div>
-        </div>
-        <!--/.portfolio-item-->
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2023">
-          <div class="portfolio-item-inner">
-            <img class="img-responsive" src="images/Aboutus/Calmpilot.png"  alt="">
-            <div class="portfolio-info">
-              <!-- 기존의 'a' 태그를 제거하고, 버튼 태그를 추가 -->
-              <button onclick="window.location.href='calmpilot.html';" class="preview">
-                <i class="fa fa-plus-circle"></i>
-              </button>
-              <h6>Calmpilot</h6>
-            </div>
-          </div>
-        </div>
-        <!--/.portfolio-item-->
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2024">
-          <div class="portfolio-item-inner"> <img class="img-responsive" src="images/Aboutus/Parallax.gif" alt="" loading="lazy">
-            <div class="portfolio-info"><button onclick="window.location.href='TramScapetoKorea.html';" class="preview"><i class="fa fa-play-circle-o"></i></button>
-              <h6>TramScapeToKorea</h6>
-            </div>
-          </div>
-        </div>
-        
-    </div>
-      
 </section>
 
-<br>
-<!--Contact-Section-Start-->
+<!-- Portfolio -->
+<section id="portfolio">
+  <div class="container">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="heading">
+        <h2>Representative Projec<span>ts</span></h2>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <ul class="portfolio-filter">
+        <li><a href="#" data-filter=".2025">2025</a></li>
+        <li><a href="#" data-filter=".2024">2024</a></li>
+        <li><a href="#" data-filter=".2023">2023</a></li>
+        <li><a href="#" data-filter=".2022">~2022</a></li>
+      </ul>
+    </div>
+
+    <div class="portfolio-items">
+      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2025">
+        <div class="portfolio-item-inner">
+          <img class="img-responsive" src="images/CrossGaussian.jpg" alt="">
+          <div class="portfolio-info">
+            <button onclick="window.location.href='calmpilot.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
+            <h6>CrossGaussian</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2025">
+        <div class="portfolio-item-inner">
+          <img class="img-responsive" src="images/LePetitCare.jpg" alt="">
+          <div class="portfolio-info">
+            <button onclick="window.location.href='calmpilot.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
+            <h6>LePetitCare</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2024">
+        <div class="portfolio-item-inner">
+          <img class="img-responsive" src="images/Aboutus/I-there.jpg" alt="" loading="lazy">
+          <div class="portfolio-info">
+            <button onclick="window.location.href='I-There.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
+            <h6>i-There</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2023">
+        <div class="portfolio-item-inner">
+          <img class="img-responsive" src="images/Aboutus/Debate.gif" alt="" loading="lazy">
+          <div class="portfolio-info">
+            <button onclick="window.location.href='Viven.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
+            <h6>Metaverse for Debate</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2023">
+        <div class="portfolio-item-inner">
+          <img class="img-responsive" src="images/Aboutus/Calmpilot.png" alt="">
+          <div class="portfolio-info">
+            <button onclick="window.location.href='calmpilot.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
+            <h6>Calmpilot</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2024">
+        <div class="portfolio-item-inner">
+          <img class="img-responsive" src="images/Aboutus/Parallax.gif" alt="" loading="lazy">
+          <div class="portfolio-info">
+            <button onclick="window.location.href='TramScapetoKorea.html';" class="preview"><i class="fa fa-play-circle-o"></i></button>
+            <h6>TramScapeToKorea</h6>
+          </div>
+        </div>
+      </div>
+    </div> <!-- /.portfolio-items -->
+  </div> <!-- /.container -->
+</section>
+
+<!-- Contact -->
 <section id="contact">
   <div class="container">
     <div class="col-md-8 col-md-offset-2">
@@ -468,63 +302,60 @@
         <h4>CONTACT IN<span>FO</span></h4>
         <ul class="contact-form">
           <li><i class="fa fa-envelope"></i>
-            <h6><strong>Mail Us:</strong> <a href="#">bjh1750@gmail.com</a></h6>
+            <h6><strong>Email:</strong> <a href="mailto:bjh1750@gmail.com">bjh1750@gmail.com</a></h6>
           </li>
           <li><i class="fa fa-phone"></i>
-            <h6><strong>Phone:</strong> +82 010-2303-2759 </h6>
+            <h6><strong>Phone:</strong> +82 10-2303-2759</h6>
           </li>
         </ul>
       </div>
       <div class="col-md-6 col-sm-6">
         <form id="main-contact-form" name="contact-form" method="post" action="#">
-          <div class="row  wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+          <div class="row wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
             <div class="col-sm-6">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="Name" required="required">
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="Email Address" required="required">
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
           </div>
           <div class="form-group">
-            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required="required"></textarea>
+            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
           </div>
-          <a class="btn-send col-md-12 col-sm-12 col-xs-12" href="#">Send Now</a>
+          <button type="submit" class="btn-send col-md-12 col-sm-12 col-xs-12">Send Now</button>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!--Jquery-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<!--Boostrap-Jquery-->
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<!--Preetyphoto-Jquery-->
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-<!--NiceScroll-Jquery-->
-<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
-<script type="text/javascript" src="js/waypoints.min.js"></script>
-<!--Isotopes-->
-<script type="text/javascript" src="js/jquery.isotope.js"></script>
-<!--Wow-Jquery-->
-<script type="text/javascript" src="js/wow.js"></script>
-<!--Count-Jquey-->
-<script type="text/javascript" src="js/jquery.countTo.js"></script>
-<script type="text/javascript" src="js/jquery.inview.min.js"></script>
-<!--Owl-Crousels-Jqury-->
-<script type="text/javascript" src="js/owl.carousel.js"></script>
-<!--Main-Scripts-->
-<script type="text/javascript" src="js/script.js"></script>
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.isotope.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.inview.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+  function toggleAward(photoID) {
+    const photo = document.getElementById(photoID);
+    if (!photo) return;
+    photo.style.display = (photo.style.display === 'none' || photo.style.display === '') ? 'block' : 'none';
+  }
+</script>
+
 </body>
 </html>
-
-<!-- Hosting24 Analytics Code -->
-<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
-<!-- End Of Analytics Code -->
