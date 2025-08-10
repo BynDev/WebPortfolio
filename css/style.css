@@ -3,6 +3,8 @@
 	templatestock.co @templatestock
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
+
+
 .hidden {
 	display: none; /* 숨겨진 아이템의 공간 제거 */
 }
@@ -1365,4 +1367,7 @@ font-weight:bolder;
 color:#fff;
 }
 
+
+
 /*Basic-Stylesheets-End-Here*/
+}
