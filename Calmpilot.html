@@ -1,461 +1,308 @@
-<!DOCTYPE html>
-<!--
-	Cosmix by TEMPLATE STOCK
-	templatestock.co @templatestock
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Jaehyun Byun</title>
-<!--Bootstrap-->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<!--Stylesheets-->
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<!--Responsive-->
-<link rel="stylesheet" type="text/css" href="css/responsive.css">
-<!--Animation-->
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<!--Prettyphoto-->
-<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
-<!--Font-Awesome-->
-<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-<!--Owl-Slider-->
-<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="css/owl.theme.css">
-<link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
-<!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-  [endif]-->
-</head>
-<html data-spy="scroll" data-target=".navbar-default" data-offset="100">
-<!--Preloader-->
-<div id="preloader">
-  <div id="pre-status">
-    <div class="preload-placeholder"></div>
-  </div>
-</div>
-<!--Navigation-->
-<header id="menu">
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand" href="#menu"><h3>Jaehyun Byun</h3></a></div><style>.navbar-brand h3 {color: white;}</style>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- /.navbar-collapse -->
+<!-- ===== Portfolio (no external imports needed) ===== -->
+<section id="portfolio" class="section" style="padding:60px 0;background:#fafafa">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2 style="margin-bottom:8px">Projects</h2>
+        <p class="text-muted">Videos • Posters/Certificates • Abstract • Links • Awards</p>
       </div>
-      <!-- /.container-fluid -->
+    </div>
+
+    <!-- Controls -->
+    <div class="row" style="margin-top:20px;margin-bottom:15px">
+      <div class="col-sm-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-search"></i></span>
+          <input id="pf-search" type="text" class="form-control" placeholder="Search projects, tech, abstract…">
+        </div>
+      </div>
+      <div class="col-sm-4 text-right" style="margin-top:10px">
+        <div id="pf-tags" class="btn-group" data-toggle="buttons" style="flex-wrap:wrap"></div>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div id="pf-grid" class="row"></div>
+  </div>
+
+  <!-- Media Modal (images / video / pdf) -->
+  <div class="modal fade" id="pfModal" tabindex="-1">
+    <div class="modal-dialog modal-lg" style="width:95%;max-width:1000px">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="pfModalTitle">Preview</h4>
+        </div>
+        <div class="modal-body" id="pfModalBody">
+          <!-- dynamic -->
+        </div>
+      </div>
     </div>
   </div>
-</header>
-<!--Slider-Start-->
-<section id="slider">
-  <div id="home-carousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="item active" style="background-image:url(images/Aboutus/ExtendedReality.jpg)">
-        <div class="carousel-caption container">
-          <div class="row">
-            <div class="col-md-7 col-sm-12 col-xs-12">
-              <h2>Human-Computer Interaction</h2>
-              <p>Human-Computer Interaction centers on creating seamless and intuitive interactions between users and technology. It emphasizes usability and accessibility, enabling impactful and engaging digital experiences.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image:url(images/Aboutus/HCS.png)">
-        <div class="carousel-caption container">
-          <div class="row">
-            <div class="col-md-7 col-sm-12 col-xs-12">
-              <h2>AI-based Mixed Reality</h2>
-              <p>By integrating AI and Mixed Reality it bridges physical and digital spaces, delivering seamless, personalized, and impactful experiences. Human-Centered Computing enhances human life through AI-base mixed Reality. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="home-carousel-left" href="#home-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a> <a class="home-carousel-right" href="#home-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a> </div>
-  </div>
-  <!--/#home-carousel-->
 </section>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Portfolio Project</title>
-  <!-- 모바일 대응을 위해 viewport 설정 (선택 사항) -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    /* ---------- 기본 스타일 초기화 ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<style>
+  /* Card look without extra libs */
+  .pf-card {
+    background:#fff;border:1px solid #eee;border-radius:8px;overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:25px;
+    transition: box-shadow .2s ease;
+  }
+  .pf-card:hover{box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  .pf-cover{height:180px;background:#ddd;background-size:cover;background-position:center}
+  .pf-body{padding:15px}
+  .pf-tags .label{margin-right:6px;margin-bottom:6px;display:inline-block}
+  .pf-tech .label{margin:2px;display:inline-block}
+  .pf-tabs{margin-top:10px}
+  .pf-tabs .nav>li>a{padding:8px 10px}
+  .pf-media-grid{display:flex;flex-wrap:wrap;gap:10px}
+  .pf-media-grid .thumb{position:relative;cursor:pointer;flex:1 1 240px;min-width:220px;max-width:100%}
+  .pf-media-grid .thumb img{width:100%;height:140px;object-fit:cover;border:1px solid #eee;border-radius:6px}
+  .pf-media-grid .thumb .cap{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:6px 8px;font-size:12px;color:#fff;
+    background:linear-gradient(180deg, transparent, rgba(0,0,0,.6));
+    border-radius:0 0 6px 6px
+  }
+  .pf-iframe16by9{position:relative;width:100%;padding-top:56.25%}
+  .pf-iframe16by9 > iframe, .pf-iframe16by9 > video{
+    position:absolute;left:0;top:0;width:100%;height:100%;border:0;border-radius:6px
+  }
+  .btn-tag{margin:2px}
+  @media(max-width:768px){ .pf-cover{height:150px} }
+</style>
+
+<script>
+  /** ========= 1) DATA: edit here only ========= **/
+  var PROJECTS = [
+    {
+      id: "calmpilot",
+      title: "Calmpilot",
+      subtitle: "Realtime Haptics Feedback Modeling to Improve Anxiety",
+      cover: "images/Aboutus/Calmpilot.png",
+      period: "2023.09 – 2024.06",
+      role: ["Team Lead","First Author","Research","Development"],
+      tech: ["Unity","XR Interaction Toolkit","bHaptics SDK","HypeRate API","Python","Matplotlib","SciPy","GitHub","Notion"],
+      tags: ["XR","Haptics","Anxiety","VR","Wearables"],
+      overview: "Social phobia involves excessive fear in social situations. Traditional exposure therapy lacks real-time guidance. We introduce a haptic feedback system for independent anxiety management and evaluate it with a VRET (presentation scenario).",
+      abstract: "This work presents a closed-loop haptic feedback approach that models real-time physiological signals during anxiety-inducing tasks. We integrate wearable sensing with VR-based exposure scenarios and provide adaptive vibrotactile cues to reduce perceived anxiety and support self-regulation.",
+      // Media
+      videos: [
+        { youtubeId: "dQw4w9WgXcQ", title: "Demo (YouTube)" }
+        // { vimeoId: "123456789", title: "Vimeo Demo" },
+        // { mp4: "videos/calmpilot_demo.mp4", title: "Local MP4 Demo" }
+      ],
+      images: [
+        { src: "images/Calmpilot/KCC.jpg", caption: "KCC 2024 Presentation" },
+        { src: "images/Calmpilot/Expo.jpg", caption: "Mobile Summit 2024 Exhibition" }
+      ],
+      pdfs: [
+        // { url: "pdfs/calmpilot_poster.pdf", title: "Poster (PDF)" }
+      ],
+      awards: [
+        { name: "COSIS Immersive Media Competition 2024", result: "2nd Place" },
+        { name: "KCC 2024 Undergraduate Session", result: "Encouragement Award" },
+        { name: "Mobile Summit 2024 — Ho Chi Minh City", result: "Startup Exhibition" }
+      ],
+      links: [
+        { title: "Conference Paper (DBpia)", url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11862533", type: "paper" },
+        { title: "News Article (NEWSIS)", url: "https://www.newsis.com/view/?id=NISX20240604_0002760886&cID=10201&pID=10200", type: "article" },
+        { title: "GitHub Repository", url: "https://github.com/JaehyeonByun/Calmpilot", type: "code" }
+      ]
+    }
+  ];
+
+  // ========= 2) RENDER =========
+  (function(){
+    var allTags = {};
+    PROJECTS.forEach(function(p){ (p.tags||[]).forEach(function(t){ allTags[t]=true; }); });
+    var TAGS = Object.keys(allTags).sort();
+
+    // Render tag filters
+    var $tags = $("#pf-tags").empty();
+    if(TAGS.length){
+      TAGS.forEach(function(t){
+        var btn = $('<label class="btn btn-default btn-sm btn-tag"><input type="checkbox" autocomplete="off" value="'+t+'"> '+t+'</label>');
+        $tags.append(btn);
+      });
     }
 
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      line-height: 1.6;
+    // Search + filter state
+    var state = { query:"", tags:new Set() };
+    $("#pf-search").on("input", function(){
+      state.query = $(this).val().toLowerCase();
+      renderGrid();
+    });
+    $("#pf-tags").on("change","input[type=checkbox]", function(){
+      var val = $(this).val();
+      if(this.checked) state.tags.add(val); else state.tags.delete(val);
+      renderGrid();
+    });
+
+    function matchProject(p){
+      // query
+      var q = state.query;
+      var matchesQuery = !q || [
+        p.title, p.subtitle, p.overview, p.abstract,
+        (p.tech||[]).join(" ")
+      ].join(" ").toLowerCase().indexOf(q) !== -1;
+
+      // tags
+      var matchesTags = state.tags.size===0 || Array.from(state.tags).every(function(t){ return (p.tags||[]).indexOf(t)!==-1; });
+
+      return matchesQuery && matchesTags;
     }
 
-    /* ---------- 컨테이너 스타일 ---------- */
-    .project-intro {
-      max-width: 1200px; /* 페이지 너비를 조절할 수 있음 */
-      margin: 2rem auto; /* 화면 가운데 정렬 */
-      padding: 2rem;
-      background-color: #fff;
-      border-radius: 8px; /* 카드 형태 연출 */
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 그늘 효과 */
-    }
+    function renderGrid(){
+      var $grid = $("#pf-grid").empty();
+      var visible = PROJECTS.filter(matchProject);
 
-    /* ---------- 헤더(프로젝트 제목, 슬로건) ---------- */
-    .project-intro header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .project-intro header h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-intro header p {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    /* ---------- 각 섹션 타이틀 공통 스타일 ---------- */
-    .project-intro article h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-
-    /* ---------- 콘텐츠 블록 공통 스타일 ---------- */
-    .project-intro article {
-      margin-bottom: 2rem;
-    }
-
-    /* ---------- 목록 스타일 ---------- */
-    .project-intro ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .project-intro li {
-      position: relative;
-      padding-left: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* 목록 앞에 작은 원 표기 (•) */
-    .project-intro li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #888;
-    }
-
-    /* ---------- 링크 스타일 ---------- */
-    a {
-      color: #007bff;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #0056b3;
-    }
-
-    /* ---------- 프로젝트 갤러리(이미지) ---------- */
-    .project-gallery {
-      display: flex;
-      flex-wrap: wrap; /* 화면이 좁아지면 자동 줄바꿈 */
-      gap: 1rem;
-    }
-
-    .project-gallery figure {
-      flex: 1 1 300px; /* 최소 너비 300px, 공간에 따라 자동 조정 */
-      margin: 0;
-    }
-
-    .project-gallery img {
-      width: 100%;
-      border-radius: 6px;
-      display: block;
-    }
-
-    .project-gallery figcaption {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* ---------- 반응형 미디어 쿼리 (예시) ---------- */
-    @media (max-width: 768px) {
-      .project-intro {
-        margin: 1rem;
-        padding: 1.5rem;
+      if(!visible.length){
+        $grid.append('<div class="col-xs-12 text-center text-muted" style="padding:40px 0">No projects found. Try clearing filters.</div>');
+        return;
       }
-      .project-intro header h2 {
-        font-size: 1.6rem;
+
+      visible.forEach(function(p){
+        var col = $('<div class="col-sm-6 col-md-4"></div>');
+        var card = $('<div class="pf-card"></div>');
+
+        // cover
+        var cover = $('<div class="pf-cover"></div>').css("background-image",'url("'+(p.cover||'')+'")');
+        card.append(cover);
+
+        // body
+        var body = $('<div class="pf-body"></div>');
+        body.append('<h4 style="margin-top:0">'+escapeHtml(p.title)+'</h4>');
+        body.append('<p class="text-muted" style="margin-bottom:6px">'+escapeHtml(p.subtitle||"")+'</p>');
+        // tags
+        var tagRow = $('<div class="pf-tags" style="margin-bottom:8px"></div>');
+        (p.tags||[]).forEach(function(t){ tagRow.append('<span class="label label-default">'+escapeHtml(t)+'</span>'); });
+        body.append(tagRow);
+        // overview
+        body.append('<p style="min-height:48px">'+escapeHtml(p.overview||"")+'</p>');
+        // tech
+        var techRow = $('<div class="pf-tech"></div>');
+        (p.tech||[]).slice(0,8).forEach(function(t){ techRow.append('<span class="label label-info">'+escapeHtml(t)+'</span>'); });
+        body.append(techRow);
+
+        // tabs
+        var tabs = $(
+                '<div class="pf-tabs">' +
+                '<ul class="nav nav-tabs" role="tablist">' +
+                '<li role="presentation" class="active"><a href="#tab-media-'+p.id+'" aria-controls="media" role="tab" data-toggle="tab"><i class="fa fa-play-circle"></i> Media</a></li>' +
+                '<li role="presentation"><a href="#tab-abs-'+p.id+'" aria-controls="abstract" role="tab" data-toggle="tab"><i class="fa fa-file-text-o"></i> Abstract</a></li>' +
+                '<li role="presentation"><a href="#tab-links-'+p.id+'" aria-controls="links" role="tab" data-toggle="tab"><i class="fa fa-link"></i> Links</a></li>' +
+                '<li role="presentation"><a href="#tab-awards-'+p.id+'" aria-controls="awards" role="tab" data-toggle="tab"><i class="fa fa-trophy"></i> Awards</a></li>' +
+                '</ul>' +
+                '<div class="tab-content" style="padding:10px 0">' +
+                '<div role="tabpanel" class="tab-pane active" id="tab-media-'+p.id+'"></div>' +
+                '<div role="tabpanel" class="tab-pane" id="tab-abs-'+p.id+'"></div>' +
+                '<div role="tabpanel" class="tab-pane" id="tab-links-'+p.id+'"></div>' +
+                '<div role="tabpanel" class="tab-pane" id="tab-awards-'+p.id+'"></div>' +
+                '</div>' +
+                '</div>'
+        );
+        body.append(tabs);
+        card.append(body);
+        col.append(card);
+        $grid.append(col);
+
+        // fill tabs
+        fillMedia('#tab-media-'+p.id, p);
+        $( '#tab-abs-'+p.id ).html('<p style="white-space:pre-wrap">'+escapeHtml(p.abstract||"")+'</p>');
+        fillLinks('#tab-links-'+p.id, p.links||[]);
+        fillAwards('#tab-awards-'+p.id, p.awards||[]);
+      });
+    }
+
+    function fillMedia(sel, p){
+      var $m = $(sel).empty();
+      var any = (p.videos&&p.videos.length) || (p.images&&p.images.length) || (p.pdfs&&p.pdfs.length);
+      if(!any){ $m.append('<div class="text-muted">No media added yet.</div>'); return; }
+
+      // videos
+      if(p.videos && p.videos.length){
+        p.videos.forEach(function(v){
+          var box = $('<div class="pf-iframe16by9" style="margin-bottom:10px"></div>');
+          if(v.youtubeId){
+            box.append('<iframe src="https://www.youtube.com/embed/'+encodeURIComponent(v.youtubeId)+'" allowfullscreen></iframe>');
+          }else if(v.vimeoId){
+            box.append('<iframe src="https://player.vimeo.com/video/'+encodeURIComponent(v.vimeoId)+'" allowfullscreen></iframe>');
+          }else if(v.mp4){
+            box.append('<video controls><source src="'+escapeHtml(v.mp4)+'" type="video/mp4">Your browser does not support the video tag.</video>');
+          }
+          $m.append(box);
+          if(v.title){ $m.append('<div class="text-muted" style="font-size:12px;margin-bottom:8px">'+escapeHtml(v.title)+'</div>'); }
+        });
       }
-      .project-intro article h3 {
-        font-size: 1.2rem;
+
+      // images (posters / certificates)
+      if(p.images && p.images.length){
+        var grid = $('<div class="pf-media-grid" style="margin-top:8px"></div>');
+        p.images.forEach(function(img){
+          var t = $('<div class="thumb"></div>');
+          t.append('<img src="'+escapeHtml(img.src)+'" alt="'+escapeHtml(img.caption||"image")+'">');
+          if(img.caption){ t.append('<div class="cap">'+escapeHtml(img.caption)+'</div>'); }
+          t.on("click", function(){
+            openModalImage(img.src, img.caption);
+          });
+          grid.append(t);
+        });
+        $m.append(grid);
       }
-    }
-  </style>
-</head>
-<body>
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <title>Portfolio Project</title>
-  <!-- 모바일 대응을 위해 viewport 설정 (선택 사항) -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    /* ---------- 기본 스타일 초기화 ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* ---------- 컨테이너 스타일 ---------- */
-    .project-intro {
-      max-width: 1200px; /* 페이지 너비를 조절할 수 있음 */
-      margin: 2rem auto; /* 화면 가운데 정렬 */
-      padding: 2rem;
-      background-color: #fff;
-      border-radius: 8px; /* 카드 형태 연출 */
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 그늘 효과 */
-    }
-
-    /* ---------- 헤더(프로젝트 제목, 슬로건) ---------- */
-    .project-intro header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .project-intro header h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-intro header p {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    /* ---------- 각 섹션 타이틀 공통 스타일 ---------- */
-    .project-intro article h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-
-    /* ---------- 콘텐츠 블록 공통 스타일 ---------- */
-    .project-intro article {
-      margin-bottom: 2rem;
-    }
-
-    /* ---------- 목록 스타일 ---------- */
-    .project-intro ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .project-intro li {
-      position: relative;
-      padding-left: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* 목록 앞에 작은 원 표기 (•) */
-    .project-intro li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #888;
-    }
-
-    /* ---------- 링크 스타일 ---------- */
-    a {
-      color: #007bff;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #0056b3;
-    }
-
-    /* ---------- 프로젝트 갤러리(이미지) ---------- */
-    .project-gallery {
-      display: flex;
-      flex-wrap: wrap; /* 화면이 좁아지면 자동 줄바꿈 */
-      gap: 1rem;
-    }
-
-    .project-gallery figure {
-      flex: 1 1 300px; /* 최소 너비 300px, 공간에 따라 자동 조정 */
-      margin: 0;
-    }
-
-    .project-gallery img {
-      width: 100%;
-      border-radius: 6px;
-      display: block;
-    }
-
-    .project-gallery figcaption {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
-    /* ---------- 반응형 미디어 쿼리 (예시) ---------- */
-    @media (max-width: 768px) {
-      .project-intro {
-        margin: 1rem;
-        padding: 1.5rem;
-      }
-      .project-intro header h2 {
-        font-size: 1.6rem;
-      }
-      .project-intro article h3 {
-        font-size: 1.2rem;
+      // pdfs (poster / paper / certificate)
+      if(p.pdfs && p.pdfs.length){
+        p.pdfs.forEach(function(pd){
+          var wrap = $('<div style="margin-top:8px"></div>');
+          var btn = $('<button class="btn btn-default btn-sm"><i class="fa fa-file-pdf-o"></i> '+escapeHtml(pd.title||"PDF")+'</button>');
+          btn.on("click", function(){ openModalPdf(pd.url, pd.title); });
+          wrap.append(btn);
+          $m.append(wrap);
+        });
       }
     }
-  </style>
-</head>
-<body>
 
-<section class="project-intro">
-  <!-- 프로젝트 제목과 한 줄 요약 -->
-  <header>
-    <h2>Calmpliot</h2>
-    <p>Realtime Haptics Feedback Modeling to Improve anxiety</p>
-  </header>
-  <!-- 프로젝트 관련 링크 -->
-  <article class="references">
-    <h3>Link</h3>
-    <ul>
-      <li><a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11862533" target="_blank">Conference Paper</a></li>
-      <li><a href="https://www.newsis.com/view/?id=NISX20240604_0002760886&cID=10201&pID=10200" target="_blank">Article</a></li>
-      <li><a href="https://github.com/JaehyeonByun/Calmpilot" target="_blank">Github</a></li>
-      <!-- 외부 기사나 블로그 포스팅, 발표 영상, 기타 자료 링크도 추가 가능 -->
-    </ul>
-  </article>
-  <!-- 프로젝트 개요 -->
-  <article class="project-overview">
-    <h3>Introduction</h3>
-    <figure>
-      <img src="images/Aboutus/Calmpilot.png" alt="KCC Image" style="width: 40%; height: auto; display: block; margin: 0 auto;">
-    </figure>
-    <br>
-    <p>
-      Social phobia involves excessive fear in social situations. Traditional exposure therapy has limitations in providing real-time guidance. This study introduces a haptic feedback system for independent anxiety management and evaluates it using a Virtual Reality Exposure Therapy (VRET) system simulating presentation scenarios. 
-    </p>
-  </article>
+    function fillLinks(sel, links){
+      var $c = $(sel).empty();
+      if(!links.length){ $c.append('<div class="text-muted">No links.</div>'); return; }
+      links.forEach(function(l){
+        var icon = (l.type==="paper"?"fa-book": l.type==="article"?"fa-newspaper-o": l.type==="code"?"fa-github":"fa-external-link");
+        var a = $('<a class="list-group-item" target="_blank" rel="noopener"></a>').attr("href", l.url);
+        a.append('<i class="fa '+icon+'"></i> <strong>'+escapeHtml(l.title)+'</strong> <i class="fa fa-external-link pull-right"></i>');
+        $c.append( $('<div class="list-group"></div>').append(a) );
+      });
+    }
 
-  <!-- 프로젝트 상세 내용 -->
-  <article class="project-details">
-    <h3>Details</h3>
-    <p>
-      This project was conducted as part of a research internship at the Haptics & Virtual Reality Lab at Kyung Hee University, in collaboration with a team of three undergraduate students. As the first author, I presented our research findings at the <strong>KCC Conference 2024</strong>, where we were honored with the Outstanding Paper Award in the undergraduate session. Subsequently, I further developed the project into a service and represented my univ at the Mobile Summit 2024, hosted by TopDev in Ho Chi Minh City, Vietnam, where I showcased our work through a startup exhibition presentation.
-    </p>
-    <ul>
-      <li><strong>Project Duration</strong>: 2023.09 ~ 2024.06</li>
-      <li><strong>Role</strong>: Team Leader, Research, Development </li>
-      <li><strong>Core Technologies</strong>: Wearable Devices, Data Analysis, Haptics, Virtual Reality</li>
-    </ul>
-  </article>
+    function fillAwards(sel, awards){
+      var $c = $(sel).empty();
+      if(!awards.length){ $c.append('<div class="text-muted">No awards.</div>'); return; }
+      var ul = $('<ul class="list-unstyled" style="margin:0"></ul>');
+      awards.forEach(function(a){
+        ul.append('<li style="margin:6px 0"><i class="fa fa-trophy" style="color:#c9a227"></i> <strong>'+escapeHtml(a.name)+'</strong> — '+escapeHtml(a.result)+'</li>');
+      });
+      $c.append(ul);
+    }
 
-  <!-- 사용 기술 스택 -->
-  <article class="technologies-used">
-    <h3>Tech Stack Used</h3>
-    <ul>
-      <li><strong>Client</strong>: Unity, XR Interaction Toolkit</li>
-      <li><strong>Wearable Device</strong>: bhapticsSDK, HyperateAPI, </li>
-      <li><strong>Data Analysis</strong>: Python, Matplotlib, Scipy</li>
-      <li><strong>Collaboration Tools</strong>: Notion, gitHub </li>
-    </ul>
-  </article>
+    function openModalImage(src, caption){
+      $("#pfModalTitle").text(caption || "Image");
+      $("#pfModalBody").html('<img src="'+escapeHtml(src)+'" style="width:100%;height:auto;border-radius:6px">');
+      $("#pfModal").modal("show");
+    }
+    function openModalPdf(url, title){
+      $("#pfModalTitle").text(title || "Document");
+      $("#pfModalBody").html('<div class="pf-iframe16by9"><iframe src="'+escapeHtml(url)+'"></iframe></div>');
+      $("#pfModal").modal("show");
+    }
 
-  <!-- 프로젝트 성과 및 수상 실적 -->
-  <article class="achievements">
-    <h3>성과 및 수상 실적</h3>
-    <ul>
-      <li>Coss Immersive media Competition 2024, 2nd Place</li>
-      <li>Encouragement Award at KCC 2024</li>
-      <li></li>
-      <li>Startup Exhibition: Mobile Summit 2024, Ho Chi Minh City, Vietnam</li>
-    </ul>
-  </article>
+    function escapeHtml(s){
+      if(s===undefined||s===null) return "";
+      return String(s).replace(/[&<>\"']/g, function(m){
+        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',\"'\":'&#39;'})[m];
+      });
+      }
 
-  <!-- 프로젝트 이미지나 시연 자료 -->
-  <article class="project-gallery">
-    <figure>
-      <img src="images/Calmpilot/KCC.jpg" alt="KCC Image" style="width: 40%; height: auto;">
-    </figure>
-    <figure>
-      <img src="images/Calmpilot/Expo.jpg" alt="Expo Image" style="width: 40%; height: auto;">
-    </figure>
-    <!-- 필요한 만큼 이미지를 추가할 수 있습니다 -->
-  </article>
-
-  
-</section>
-
-</body>
-</html>
-
-
-<footer id="footer-down">
-  <p> &copy; Copyrigh 2016 Cosmix - Created By : <a href="http://templatestock.co" target="_blank">Template Stock</a> </p>
-</footer>
-<!--Jquery-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<!--Boostrap-Jquery-->
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<!--Preetyphoto-Jquery-->
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
-<!--NiceScroll-Jquery-->
-<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
-<script type="text/javascript" src="js/waypoints.min.js"></script>
-<!--Isotopes-->
-<script type="text/javascript" src="js/jquery.isotope.js"></script>
-<!--Wow-Jquery-->
-<script type="text/javascript" src="js/wow.js"></script>
-<!--Count-Jquey-->
-<script type="text/javascript" src="js/jquery.countTo.js"></script>
-<script type="text/javascript" src="js/jquery.inview.min.js"></script>
-<!--Owl-Crousels-Jqury-->
-<script type="text/javascript" src="js/owl.carousel.js"></script>
-<!--Main-Scripts-->
-<script type="text/javascript" src="js/script.js"></script>
-
-</html>
-
-<!-- Hosting24 Analytics Code -->
-<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
-<!-- End Of Analytics Code -->
+      // Initial render
+      renderGrid();
+    })();
+</script>

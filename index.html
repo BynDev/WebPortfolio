@@ -205,88 +205,401 @@
   </div>
 </section>
 
-<!-- Portfolio -->
-<section id="portfolio">
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="heading">
-        <h2>Representative Projec<span>ts</span></h2>
-        <div class="line"></div>
-      </div>
+<!-- ========== CLEAN PORTFOLIO v2 (overlay 제거, 이미지 강조) ========== -->
+<section id="portfolio" class="cp">
+  <style>
+    /* ===== Design tokens ===== */
+    .cp{--cp-bg:#fafafa;--cp-card:#fff;--cp-ink:#111;--cp-ink-2:#555;--cp-line:#eaeaea;
+      --cp-r:14px;--cp-gap:16px;--cp-pad:14px;--cp-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .cp{padding:64px 0;background:var(--cp-bg)}
+    .cp .cp-wrap{max-width:3400px;margin:0 auto;padding:0 16px}
+    .cp .cp-heading{text-align:center;margin-bottom:28px}
+    .cp .cp-title{font-size:28px;letter-spacing:.2px;margin:0;color:var(--cp-ink)}
+    .cp .cp-line{width:60px;height:2px;background:var(--cp-ink);margin:10px auto 0;border-radius:2px}
+
+    /* Grid (누락 복구 + 정렬 고정) */
+    .cp .cp-grid{
+      display:grid;
+      gap:var(--cp-gap);
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      align-items:start;
+      justify-items:stretch;   /* ← 이게 없으면 카드가 안 커짐 */
+    }
+
+    .cp .cp-card{
+      width:100%;              /* 안전핀: 아이템이 트랙을 꽉 채우게 */
+      max-width:none;
+      align-self:start;
+    }
+    .cp .cp-card{ align-self:start; }
+
+
+    /* Card */
+    .cp .cp-card{background:var(--cp-card);border-radius:var(--cp-r);overflow:hidden;box-shadow:var(--cp-shadow);
+      display:flex;flex-direction:column;transition:transform .18s ease, box-shadow .18s ease}
+    .cp .cp-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+
+    .cp .cp-media{
+      position:relative;
+      width:100%;
+      aspect-ratio:4/2;   /* 6:4 비율 고정 */
+      height:auto;        /* 이전 height:clamp 제거 */
+      padding-top:0;      /* padding 방식 무효화 */
+      background:#ddd;
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .cp .cp-img{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover; display:block;
+    }
+    .cp .cp-card:hover .cp-img{transform:scale(1.03)}
+
+    /* Head (이미지 아래 텍스트/버튼) */
+    /* 헤더 영역 높이 통일(프로젝트명 길이 달라도 동일 높이) */
+    .cp .cp-head{
+      padding:10px var(--cp-pad) 6px;
+      min-height:52px;                 /* 64px → 52px */
+    }
+    .cp .cp-name{
+      margin:0; font-size:16px; font-weight:700; color:var(--cp-ink);
+      display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1;
+      overflow:hidden; text-overflow:ellipsis; /* 한 줄로 고정(길면 … 처리) */
+    }
+    .cp .cp-actions{ flex-wrap:nowrap; }
+    .cp .cp-link,.cp .cp-toggle{font-size:13px;border:1px solid var(--cp-line);background:#fff;border-radius:10px;
+      padding:8px 12px;cursor:pointer;text-decoration:none;color:var(--cp-ink);
+      display:inline-flex;align-items:center;gap:6px}
+    .cp .cp-toggle .chev{transition:transform .18s ease;display:inline-block}
+    .cp .cp-toggle[aria-expanded="true"] .chev{transform:rotate(90deg)}
+
+    /* Details (collapsible) */
+    .cp .cp-details[hidden]{display:none !important}
+    .cp .cp-details{border-top:1px solid var(--cp-line);background:#fbfbfb}
+    .cp .cp-body{padding:12px var(--cp-pad) 16px}
+    .cp .cp-rows{display:flex;gap:16px;flex-wrap:wrap}
+    .cp .cp-col{flex:1 1 260px;min-width:240px}
+    .cp .cp-meta{font-size:13px;color:var(--cp-ink-2);margin:6px 0 0;line-height:1.6}
+    .cp .cp-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .cp .cp-badge{font-size:12px;padding:5px 10px;background:#eee;border-radius:999px}
+    .cp .cp-more{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .cp .cp-more a{font-size:13px;border:1px solid var(--cp-line);padding:8px 12px;border-radius:10px;background:#fff;color:var(--cp-ink);text-decoration:none}
+
+    /* Media (video) */
+    .cp .cp-vid{
+      position:relative;
+      aspect-ratio:16/9;      /* 비디오도 16:9 고정 */
+      background:#000;
+      border-radius:10px;
+      overflow:hidden;
+      margin-bottom:12px;     /* 아래 메타와 간격 */
+    }
+    .cp .cp-vid iframe, .cp .cp-vid video { position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+    /* Focus / A11y */
+    .cp .cp-link:focus,.cp .cp-toggle:focus{outline:2px solid #1a73e8;outline-offset:2px}
+
+    /* Mobile */
+    @media (max-width:480px){
+      .cp .cp-title{font-size:24px}
+      .cp .cp-head{flex-direction:column;align-items:flex-start;gap:8px}
+    }
+  </style>
+
+  <div class="cp-wrap">
+    <div class="cp-heading">
+      <h2 class="cp-title">Representative Projects</h2>
+      <div class="cp-line"></div>
     </div>
 
-    <div class="text-center">
-      <ul class="portfolio-filter">
-        <li><a href="#" data-filter=".2025">2025</a></li>
-        <li><a href="#" data-filter=".2024">2024</a></li>
-        <li><a href="#" data-filter=".2023">2023</a></li>
-        <li><a href="#" data-filter=".2022">~2022</a></li>
-      </ul>
-    </div>
-
-    <div class="portfolio-items">
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2025">
-        <div class="portfolio-item-inner">
-          <img class="img-responsive" src="images/CrossGaussian.jpg" alt="">
-          <div class="portfolio-info">
-            <button onclick="window.location.href='calmpilot.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
-            <h6>CrossGaussian</h6>
+    <div class="cp-grid">
+      <!-- ===== Card: CrossGaussian ===== -->
+      <article class="cp-card">
+        <div class="cp-media">
+          <img class="cp-img" src="images/CrossGaussian.jpg" alt="CrossGaussian thumbnail"
+               loading="eager" fetchpriority="high" decoding="async">
+        </div>
+        <div class="cp-head">
+          <h3 class="cp-name">CrossGaussian</h3>
+          <div class="cp-actions">
+            <a class="cp-link" href="CrossGaussian.html">Case</a>
+            <button class="cp-toggle" type="button" aria-expanded="false" aria-controls="cp-cross">
+              <span class="chev">▶</span> Details
+            </button>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2025">
-        <div class="portfolio-item-inner">
-          <img class="img-responsive" src="images/LePetitCare.jpg" alt="">
-          <div class="portfolio-info">
-            <button onclick="window.location.href='calmpilot.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
-            <h6>LePetitCare</h6>
+        <div id="cp-cross" class="cp-details" hidden>
+          <div class="cp-body">
+            <div class="cp-rows">
+              <div class="cp-col">
+                <strong>What</strong>
+                <p class="cp-meta">VR remote collaboration blending real-time 360° video with 3D Gaussian Splatting for view-dependent exploration and depth cues.</p>
+                <div class="cp-more">
+                  <a href="CrossGaussian.html">Project</a>
+                  <a href="https://github.com/BynDev" target="_blank">Code</a>
+                </div>
+              </div>
+              <div class="cp-col">
+                <strong>Tech Stack</strong>
+                <div class="cp-badges">
+                  <span class="cp-badge">Unity (URP)</span>
+                  <span class="cp-badge">C#</span>
+                  <span class="cp-badge">3DGS</span>
+                  <span class="cp-badge">360° Streaming</span>
+                  <span class="cp-badge">HLSL</span>
+                </div>
+                <p class="cp-meta"><strong>Conference</strong><br>UIST 2025 — Poster (Accepted)</p>
+              </div>
+              <div class="cp-col">
+                <div class="cp-vid" data-youtube=""></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2024">
-        <div class="portfolio-item-inner">
-          <img class="img-responsive" src="images/Aboutus/I-there.jpg" alt="" loading="lazy">
-          <div class="portfolio-info">
-            <button onclick="window.location.href='I-There.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
-            <h6>i-There</h6>
+      <!-- ===== Card: LePetitCare ===== -->
+      <article class="cp-card">
+        <div class="cp-media">
+          <img class="cp-img" src="images/LePetitCare.jpg" alt="LePetitCare thumbnail" loading="lazy">
+        </div>
+        <div class="cp-head">
+          <h3 class="cp-name">LePetitCare</h3>
+          <div class="cp-actions">
+            <a class="cp-link" href="LePetitCare.html">Case</a>
+            <button class="cp-toggle" type="button" aria-expanded="false" aria-controls="cp-lepetit">
+              <span class="chev">▶</span> Details
+            </button>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2023">
-        <div class="portfolio-item-inner">
-          <img class="img-responsive" src="images/Aboutus/Debate.gif" alt="" loading="lazy">
-          <div class="portfolio-info">
-            <button onclick="window.location.href='Viven.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
-            <h6>Metaverse for Debate</h6>
+        <div id="cp-lepetit" class="cp-details" hidden>
+          <div class="cp-body">
+            <div class="cp-rows">
+              <div class="cp-col">
+                <strong>What</strong>
+                <p class="cp-meta">Child-centered ADHD screening & training in XR with AI personalization and story-based tasks.</p>
+                <div class="cp-more">
+                  <a href="LePetitCare.html">Project</a>
+                  <a href="https://github.com/BynDev" target="_blank">Code</a>
+                </div>
+              </div>
+              <div class="cp-col">
+                <strong>Tech Stack</strong>
+                <div class="cp-badges">
+                  <span class="cp-badge">Unity</span>
+                  <span class="cp-badge">AR Glasses</span>
+                  <span class="cp-badge">C#</span>
+                  <span class="cp-badge">ML Inference</span>
+                  <span class="cp-badge">DSM-5</span>
+                </div>
+                <p class="cp-meta"><strong>Conference</strong><br>CHI 2025 — SDC Top 4 Finalist</p>
+              </div>
+              <div class="cp-col">
+                <div class="cp-vid" data-youtube="https://www.youtube.com/watch?v=Viuxw1HnCkw"></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item corporate 2023">
-        <div class="portfolio-item-inner">
-          <img class="img-responsive" src="images/Aboutus/Calmpilot.png" alt="">
-          <div class="portfolio-info">
-            <button onclick="window.location.href='calmpilot.html';" class="preview"><i class="fa fa-plus-circle"></i></button>
-            <h6>Calmpilot</h6>
+      <!-- ===== Card: i-There ===== -->
+      <article class="cp-card">
+        <div class="cp-media">
+          <img class="cp-img" src="images/Aboutus/I-there.jpg" alt="i-There thumbnail" loading="lazy">
+        </div>
+        <div class="cp-head">
+          <h3 class="cp-name">i-There</h3>
+          <div class="cp-actions">
+            <a class="cp-link" href="I-There.html">Case</a>
+            <button class="cp-toggle" type="button" aria-expanded="false" aria-controls="cp-ithere">
+              <span class="chev">▶</span> Details
+            </button>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item 2024">
-        <div class="portfolio-item-inner">
-          <img class="img-responsive" src="images/Aboutus/Parallax.gif" alt="" loading="lazy">
-          <div class="portfolio-info">
-            <button onclick="window.location.href='TramScapetoKorea.html';" class="preview"><i class="fa fa-play-circle-o"></i></button>
-            <h6>TramScapeToKorea</h6>
+        <div id="cp-ithere" class="cp-details" hidden>
+          <div class="cp-body">
+            <div class="cp-rows">
+              <div class="cp-col">
+                <strong>What</strong>
+                <p class="cp-meta">Eye-tracking AR puzzle for attention training on MetaLens 2; makerthon-to-research pipeline.</p>
+                <div class="cp-more"><a href="I-There.html">Project</a></div>
+              </div>
+              <div class="cp-col">
+                <strong>Tech Stack</strong>
+                <div class="cp-badges">
+                  <span class="cp-badge">Unity</span>
+                  <span class="cp-badge">MetaLens 2</span>
+                  <span class="cp-badge">Eye Tracking</span>
+                  <span class="cp-badge">C#</span>
+                </div>
+                <p class="cp-meta"><strong>Award</strong><br>XR Device Makerthon 2024 — 2nd Place</p>
+              </div>
+              <div class="cp-col">
+                <div class="cp-vid" data-youtube=""></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div> <!-- /.portfolio-items -->
-  </div> <!-- /.container -->
+      </article>
+
+      <!-- ===== Card: Metaverse for Debate ===== -->
+      <article class="cp-card">
+        <div class="cp-media">
+          <img class="cp-img" src="images/Aboutus/Debate.gif" alt="Metaverse for Debate thumbnail" loading="lazy">
+        </div>
+        <div class="cp-head">
+          <h3 class="cp-name">Metaverse for Debate</h3>
+          <div class="cp-actions">
+            <a class="cp-link" href="Viven.html">Case</a>
+            <button class="cp-toggle" type="button" aria-expanded="false" aria-controls="cp-debate">
+              <span class="chev">▶</span> Details
+            </button>
+          </div>
+        </div>
+        <div id="cp-debate" class="cp-details" hidden>
+          <div class="cp-body">
+            <div class="cp-rows">
+              <div class="cp-col">
+                <strong>What</strong>
+                <p class="cp-meta">Synchronous debate training in a social metaverse with roleplay, timers, and feedback tools.</p>
+              </div>
+              <div class="cp-col">
+                <strong>Tech Stack</strong>
+                <div class="cp-badges">
+                  <span class="cp-badge">Unity</span>
+                  <span class="cp-badge">C#</span>
+                  <span class="cp-badge">Multiplayer</span>
+                </div>
+              </div>
+              <div class="cp-col"><div class="cp-vid" data-youtube=""></div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== Card: Calmpilot ===== -->
+      <article class="cp-card">
+        <div class="cp-media">
+          <img class="cp-img" src="images/Aboutus/Calmpilot.png" alt="Calmpilot thumbnail" loading="lazy">
+        </div>
+        <div class="cp-head">
+          <h3 class="cp-name">Calmpilot</h3>
+          <div class="cp-actions">
+            <a class="cp-link" href="calmpilot.html">Case</a>
+            <button class="cp-toggle" type="button" aria-expanded="false" aria-controls="cp-calmpilot">
+              <span class="chev">▶</span> Details
+            </button>
+          </div>
+        </div>
+        <div id="cp-calmpilot" class="cp-details" hidden>
+          <div class="cp-body">
+            <div class="cp-rows">
+              <div class="cp-col">
+                <strong>What</strong>
+                <p class="cp-meta">VR + smartwatch biofeedback for stage-fright & anxiety; personalized exposure training.</p>
+                <div class="cp-more"><a href="calmpilot.html">Project</a></div>
+              </div>
+              <div class="cp-col">
+                <strong>Tech Stack</strong>
+                <div class="cp-badges">
+                  <span class="cp-badge">Unity</span>
+                  <span class="cp-badge">VR</span>
+                  <span class="cp-badge">C#</span>
+                  <span class="cp-badge">Wearables</span>
+                </div>
+              </div>
+              <div class="cp-col"><div class="cp-vid" data-youtube=""></div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== Card: TramScapeToKorea ===== -->
+      <article class="cp-card">
+        <div class="cp-media">
+          <img class="cp-img" src="images/Aboutus/Parallax.gif" alt="TramScapeToKorea thumbnail" loading="lazy">
+        </div>
+        <div class="cp-head">
+          <h3 class="cp-name">TramScapeToKorea</h3>
+          <div class="cp-actions">
+            <a class="cp-link" href="TramScapetoKorea.html">Demo</a>
+            <button class="cp-toggle" type="button" aria-expanded="false" aria-controls="cp-tram">
+              <span class="chev">▶</span> Details
+            </button>
+          </div>
+        </div>
+        <div id="cp-tram" class="cp-details" hidden>
+          <div class="cp-body">
+            <div class="cp-rows">
+              <div class="cp-col">
+                <strong>What</strong>
+                <p class="cp-meta">2D display-based CR with head-tracked motion parallax; shader-based dithering blend.</p>
+              </div>
+              <div class="cp-col">
+                <strong>Tech Stack</strong>
+                <div class="cp-badges">
+                  <span class="cp-badge">Unity</span>
+                  <span class="cp-badge">Kinect</span>
+                  <span class="cp-badge">Motion Parallax</span>
+                  <span class="cp-badge">3DGS</span>
+                  <span class="cp-badge">Shader</span>
+                </div>
+              </div>
+              <div class="cp-col"><div class="cp-vid" data-youtube=""></div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div><!-- /cp-grid -->
+  </div><!-- /cp-wrap -->
+
+  <script>
+    // Toggle + lazy YouTube (대표 이미지 가림 X, 같은 카드 내부만 확장)
+    (function(){
+      document.addEventListener('click', function(e){
+        var btn = e.target.closest('.cp .cp-toggle');
+        if(!btn) return;
+
+        var id = btn.getAttribute('aria-controls');
+        var panel = document.getElementById(id);
+        if(!panel) return;
+
+        var open = panel.hasAttribute('hidden');
+
+        // 한 번에 하나만 펼치고 싶으면 아래 주석 해제
+        document.querySelectorAll('.cp .cp-details:not([hidden])').forEach(function(p){
+          if(p !== panel){ p.setAttribute('hidden',''); var b=p.closest('.cp-card').querySelector('.cp-toggle'); if(b) b.setAttribute('aria-expanded','false'); }
+        });
+
+        if(open){
+          panel.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded','true');
+
+          // Lazy YouTube: 카드 안의 .cp-vid[data-youtube]에 ID가 있으면 로드
+          var vid = panel.querySelector('.cp-vid[data-youtube]');
+          if(vid && !vid.dataset.loaded){
+            var id = vid.getAttribute('data-youtube');
+            if(id){
+              var ifr = document.createElement('iframe');
+              ifr.loading='lazy'; ifr.allowFullscreen = true;
+              ifr.src='https://www.youtube.com/embed/'+encodeURIComponent(id)+'?rel=0';
+              vid.appendChild(ifr); vid.dataset.loaded='1';
+            }
+          }
+
+          panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+        }else{
+          panel.setAttribute('hidden','');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    })();
+  </script>
 </section>
+
+
+
 
 <!-- Contact -->
 <section id="contact">
