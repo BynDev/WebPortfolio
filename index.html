@@ -12,6 +12,13 @@
       text-align: center;
       padding: 100px 20px;
     }
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.1em;
+    }
     a {
       color: #0066ff;
       text-decoration: none;
@@ -20,18 +27,32 @@
     a:hover {
       text-decoration: underline;
     }
+    #countdown {
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
 <h1>Portfolio Moved</h1>
 <p>The updated portfolio is now available at:</p>
 <p><a href="https://jaehyunbyun.framer.website/" target="_blank">https://jaehyunbyun.framer.website/</a></p>
-<p>Redirecting in 3 seconds...</p>
+<p id="countdown">Redirecting in <span id="seconds">5</span> seconds...</p>
 
 <script>
-  setTimeout(function() {
-    window.location.href = "https://jaehyunbyun.framer.website/";
-  }, 3000);
+  let seconds = 5;
+  const countdownEl = document.getElementById('seconds');
+
+  const timer = setInterval(() => {
+    seconds--;
+    countdownEl.textContent = seconds;
+    if (seconds <= 0) {
+      clearInterval(timer);
+      window.location.href = "https://jaehyunbyun.framer.website/";
+    }
+  }, 1000);
 </script>
 </body>
 </html>
